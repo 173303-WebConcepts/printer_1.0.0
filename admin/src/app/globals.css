@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  --color-primary: #edae49;
+  --color-primary-content: black;
+  --color-base-content: #cfcde4;
+  --color-base-200: "oklch(37.3% 0.034 259.733)";
+  --color-neutral-content: #cfcde4;
+  --color-neutral: #09090B
+}
+
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1400px;
+  --breakpoint-3xl: 1536px;
+
+   --color-dark-2: #404550; /* border */
+}
+
+@layer base {
+  h1 {
+    @apply text-[2.5rem] leading-[3.2rem] font-semibold md:text-[2.986rem] md:leading-[3.7rem];
+  }
+  h2 {
+    @apply text-[2.32rem] leading-[3.35rem] font-semibold md:text-[2.488rem];
+  }
+  h3 {
+    @apply text-[2rem] leading-[2.68rem] font-semibold md:text-[2.074rem] md:leading-[2.8rem];
+  }
+  h4 {
+    @apply text-[1.5rem] leading-[2.1rem] font-semibold md:text-[1.728rem] md:leading-[2.5rem];
+  }
+  h5 {
+    @apply text-[1.3rem] leading-[1.8rem] font-semibold md:text-[1.44rem] md:leading-[2rem];
+  }
+  h6 {
+    @apply text-[1.1rem] leading-[1.6rem] font-semibold md:text-[1.2rem] md:leading-[1.8rem];
+  }
+}
+
+@layer components {
+  .glass-1 {
+    backdrop-filter: blur(25px) saturate(0%);
+    -webkit-backdrop-filter: blur(25px) saturate(0%);
+    background-color: rgba(17, 25, 40, 0.7);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+}
+
+@layer utilities {
+}
+
+@utility container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+
+  @variant sm {
+    padding-inline: 2rem;
+  }
+
+  @variant xl {
+    padding-inline: 2rem;
+  }
+}

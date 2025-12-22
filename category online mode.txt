@@ -1,0 +1,205 @@
+import React, { useEffect, useState, useCallback } from "react";
+import { ScrollView, View, TextInput, RefreshControl, Text, TouchableOpacity } from "react-native";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableData } from "@/components/ui/table";
+import TopBottomNav from "@/src/layouts/TopBottomNav";
+import { debounce } from "lodash";
+import { axiosInstance } from "@/src/utils/axios";
+import { Spinner } from "@/components/ui/spinner";
+import { Button, ButtonIcon, ButtonText } from "@/components/ui/button";
+import CustomInput from "@/src/widgets/CustomInput";
+import Ionicons from "@react-native-vector-icons/ionicons";
+import { ThemedText } from "@/src/widgets/ThemeText";
+import DeleteModal from "./DeleteModal";
+import { Helper } from "@/src/utils/Helper";
+import AppToast from "@/src/widgets/CustomToast";
+import AppIcon from "@/src/components/AppIcon";
+import { useNavigation } from "@react-navigation/native";
+import { AddIcon } from "@/components/ui/icon";
+import Pagination from "@/src/widgets/Pagination";
+import EditModal from "./EditModal";
+
+const PAGE_SIZE = 10;
+
+const CategoryList = () => {
+  const [data, setData] = useState<any>(null);
+  const [pagination, setPagination] = useState({
+    currentPage: 1,
+    totalPages: 1,
+    documentCount: 0,
+  });
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [open1, setOpen1] = useState(false);
+
+  const [isDeleteLoading, setIsDeleteLoading] = useState<any>(null);
+  const [item, setItem] = useState<any>({});
+
+  const navigation = useNavigation<any>();
+
+  // ✅ Fetch categories from backend
+  const fetchCategories = async (page = 1, query = "") => {
+    try {
+      setLoading(true);
+      const res = await axiosInstance.get("/category/user-categories", {
+        params: { page, pageSize: PAGE_SIZE, name: query },
+      });
+      setData(res?.data?.data || []);
+    } catch (err) {
+      console.error("Fetch categories error:", err);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchCategories(1);
+  }, []);
+
+  // ✅ Debounced filter (search)
+  // const handleSearch = useCallback(
+  //   debounce((text: string) => {
+  //     setSearch(text);
+  //     fetchCategories(1, text.trim());
+  //   }, 700),
+  //   [],
+  // );
+
+  // 👇 Create a stable debounced function
+  const debouncedSearch = React.useMemo(
+    () =>
+      debounce((text: string) => {
+        setSearch(text);
+        fetchCategories(1, text.trim());
+      }, 700),
+    [fetchCategories],
+  );
+
+  useEffect(() => {
+    // Cleanup debounce on unmount (important for RN)
+    return () => debouncedSearch.cancel();
+  }, [debouncedSearch]);
+
+  // 👇 Simple wrapper for your input
+  const handleSearch = (text: string) => debouncedSearch(text);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage >= 1 && newPage <= pagination.totalPages) {
+      fetchCategories(newPage, search);
+    }
+  };
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    fetchCategories(1, search);
+  };
+
+  const handleEdit = (category: any) => {
+    if (category.shopType) {
+      return AppToast.error("Oops", "You can't edit category created by admin.");
+    }
+
+    setOpen1(true);
+    setItem(category);
+  };
+
+  const handleDelete = async (_id: any) => {
+    setIsDeleteLoading(true);
+    try {
+      const res = await axiosInstance.delete(`/category/delete/${_id}`);
+
+
+
+      if (res?.data?.success) {
+        setOpen(false);
+        fetchCategories(1);
+        return Helper.res(res);
+      }
+    } catch (error) {
+      return Helper.res(error);
+    } finally {
+      setIsDeleteLoading(false);
+    }
+  };
+
+  return (
+    <TopBottomNav>
+      {/* Scrollable list */}
+      <ScrollView
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={["#FD680D"]} tintColor="#FD680D" />}
+        className="px-4"
+        contentContainerStyle={{
+          paddingBottom: 20, // 👈 gives actual scrollable bottom space
+        }}
+      >
+        <View className="mt-2">
+          <View className="flex-row justify-end mb-4">
+            <Button variant="solid" size={"sm"} className="mt-2 w-fit" onPress={() => navigation.navigate("Add Category")}>
+              <AppIcon name="add-circle" className="text-white text-xl" />
+              <ButtonText>Add New Category</ButtonText>
+            </Button>
+          </View>
+
+          <CustomInput icon="search-outline" placeholder="Search" onChangeText={handleSearch} IconComponent={Ionicons} />
+        </View>
+
+        {!loading && data?.categories.length > 0 && (
+          <ThemedText className="capitalize !text-base-content-2 mt-4">Results: {data?.paginationData?.documentCount || 0}</ThemedText>
+        )}
+
+        {loading ? (
+          <View className="flex items-center justify-center py-20">
+            <Spinner size="large" />
+          </View>
+        ) : data?.categories.length > 0 ? (
+          <View className="flex flex-row flex-wrap">
+            {data?.categories.map((cat: any, index: any) => (
+              <View
+                key={cat._id || index}
+                className="mb-1 w-full bg-base-200 border flex flex-row justify-between  rounded-lg p-4 shadow-md"
+              >
+                <View className="mt-2">
+                  <ThemedText className="capitalize text-lg">{cat.name}</ThemedText>
+                </View>
+                <View className="flex flex-row justify-end items-end">
+                  <View className="flex flex-row gap-3">
+                    <TouchableOpacity onPress={() => handleEdit(cat)}>
+                      <Ionicons name="create-outline" size={22} className={` ${cat.shopType ? "text-info/50" : "text-info"}`} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                      onPress={() => {
+                        setItem(cat);
+                        setOpen(true);
+                      }}
+                    >
+                      <Ionicons name="trash-outline" size={22} className="text-error" />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            ))}
+          </View>
+        ) : (
+          <View className="flex items-center justify-center py-10">
+            <ThemedText>No Category Found</ThemedText>
+          </View>
+        )}
+
+        {/* Pagination */}
+        {!loading && data?.paginationData?.totalPages > 1 && (
+          <Pagination paginationData={data?.paginationData} onPageChange={(page: any) => fetchCategories(page, search)} />
+        )}
+      </ScrollView>
+
+      {open && (
+        <DeleteModal showModal={open} setShowModal={setOpen} onConfirm={() => handleDelete(item._id)} isDeleting={isDeleteLoading} />
+      )}
+      {open1 && <EditModal showModal={open1} setShowModal={setOpen1} item={item} reFetch={() => fetchCategories(1)} />}
+    </TopBottomNav>
+  );
+};
+
+export default CategoryList;

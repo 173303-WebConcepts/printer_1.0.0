@@ -1,0 +1,31 @@
+# Node modules
+node_modules/
+
+# React Native build folders
+android/
+ios/
+build/
+dist/
+
+# Metro bundler cache
+.expo/
+.expo-shared/
+.bundle/
+.cache/
+.temp/
+
+# Generated JS files from TypeScript
+**/*.js
+**/*.jsx
+**/*.d.ts
+
+# Configuration files you don’t want Prettier to touch
+*.min.js
+*.bundle.js
+
+# Logs
+*.log
+
+# Misc
+coverage/
+.env

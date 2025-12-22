@@ -1,0 +1,666 @@
+import { RawDraftContentState } from "draft-js";
+
+export const emojis = [
+  "😀",
+  "😁",
+  "😂",
+  "😃",
+  "😉",
+  "😋",
+  "😎",
+  "😍",
+  "😗",
+  "🤗",
+  "🤔",
+  "😣",
+  "😫",
+  "😴",
+  "😌",
+  "🤓",
+  "😛",
+  "😜",
+  "😠",
+  "😇",
+  "😷",
+  "😈",
+  "👻",
+  "😺",
+  "😸",
+  "😹",
+  "😻",
+  "😼",
+  "😽",
+  "🙀",
+  "🙈",
+  "🙉",
+  "🙊",
+  "👼",
+  "👮",
+  "🕵",
+  "💂",
+  "👳",
+  "🎅",
+  "👸",
+  "👰",
+  "👲",
+  "🙍",
+  "🙇",
+  "🚶",
+  "🏃",
+  "💃",
+  "⛷",
+  "🏂",
+  "🏌",
+  "🏄",
+  "🚣",
+  "🏊",
+  "⛹",
+  "🏋",
+  "🚴",
+  "👫",
+  "💪",
+  "👈",
+  "👉",
+  "👉",
+  "👆",
+  "🖕",
+  "👇",
+  "🖖",
+  "🤘",
+  "🖐",
+  "👌",
+  "👍",
+  "👎",
+  "✊",
+  "👊",
+  "👏",
+  "🙌",
+  "🙏",
+  "🐵",
+  "🐶",
+  "🐇",
+  "🐥",
+  "🐸",
+  "🐌",
+  "🐛",
+  "🐜",
+  "🐝",
+  "🍉",
+  "🍄",
+  "🍔",
+  "🍤",
+  "🍨",
+  "🍪",
+  "🎂",
+  "🍰",
+  "🍾",
+  "🍷",
+  "🍸",
+  "🍺",
+  "🌍",
+  "🚑",
+  "⏰",
+  "🌙",
+  "🌝",
+  "🌞",
+  "⭐",
+  "🌟",
+  "🌠",
+  "🌨",
+  "🌩",
+  "⛄",
+  "🔥",
+  "🎄",
+  "🎈",
+  "🎉",
+  "🎊",
+  "🎁",
+  "🎗",
+  "🏀",
+  "🏈",
+  "🎲",
+  "🔇",
+  "🔈",
+  "📣",
+  "🔔",
+  "🎵",
+  "🎷",
+  "💰",
+  "🖊",
+  "📅",
+  "✅",
+  "❎",
+  "💯",
+  // Added gaming-related emojis
+  "⛑️",
+  "🎮", // Video Game Controller
+  "🕹️", // Joystick
+  "👾", // Alien Monster
+  "🎲", // Game Die
+  "🏆", // Trophy
+  "🎖️", // Medal
+  "⚔️", // Crossed Swords
+  "🛡️", // Shield
+  "🗡️", // Dagger
+  "🪙", // Coin
+  "🔮", // Crystal Ball
+  "🧙‍♂️", // Mage
+  "🧚‍♀️", // Fairy
+  "🦸‍♂️", // Superhero
+  "🦸‍♀️", // Superheroine
+  "🤖", // Robot Face
+  "👨‍🚀", // Astronaut
+  "🎉", // Party Popper
+  "🧩", // Puzzle Piece
+  "💥", // Collision
+  "💎", // Gem Stone
+  "✨", // Sparkles
+  "🚗", // Car
+  "🪖", // Helmet
+  "🎒", // Backpack
+  "⚡", // High Voltage
+  "🔗", // Link
+  "🛡️", // Shield (repeated for emphasis)
+  "🕹️", // Game Controller (repeated for emphasis)
+  "🏁", // Chequered Flag
+  "📅", // Calendar
+  "🌟", // Glowing Star
+];
+
+export const toolsOptions = [
+  "emoji",
+  "inline",
+  "blockType",
+  "fontSize",
+  "fontFamily",
+  "list",
+  "textAlign",
+  "colorPicker",
+  // "link",
+  // "embedded",
+
+  // "image",
+  // "remove",
+  "history",
+];
+
+export const defaultContent: RawDraftContentState = {
+  blocks: [
+    {
+      key: "fvv86",
+      text: "🎮 PUBG Elite Sniper Account for Sale 🎮",
+      type: "header-three",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 2,
+          length: 34,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "85u3k",
+      text: "💥 Level 55\n💎 Account Type: Elite Sniper\n⚔️ Rare & Upgraded Weapons: 3 Enhanced Sniper Skins – Perfect for the stealthy sharpshooter! \n\n🏆 Account Features:",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 2,
+          length: 8,
+          style: "BOLD",
+        },
+        {
+          offset: 13,
+          length: 12,
+          style: "BOLD",
+        },
+        {
+          offset: 43,
+          length: 23,
+          style: "BOLD",
+        },
+        {
+          offset: 135,
+          length: 19,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "e2130",
+      text: "✨ Mythic Items (5 Total):",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 25,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "a28o7",
+      text: "Weapons: Mythic weapons that give you an edge in battle.",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 7,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "173js",
+      text: "Accessories: Unlock special abilities with exclusive mythics.",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 11,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "e75ui",
+      text: "🚗 Vehicle Skins (2 Unique):",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 27,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "fs9br",
+      text: "Drive into battle with rare, upgraded vehicle skins that turn heads.",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "2gjro",
+      text: "Includes limited-edition skins that are hard to come by!",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "dvif1",
+      text: "⛑️ Helmets (2 Epic Skins):",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 26,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "6epa3",
+      text: "Protect yourself in style with elite-level helmet skins.",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "b7612",
+      text: "Includes mythic-level gear to keep you ahead of the competition!",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "bkopd",
+      text: "🎒 Backpacks (1 Premium Skin):",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 29,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "e80br",
+      text: "Carry more loot with this beautifully designed, exclusive backpack skin.",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "6m3d1",
+      text: "⚡ Upgraded Weapon Skins (3 Total):",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 34,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "1ha9g",
+      text: "Equip yourself with top-tier sniper skins, with 3 skins specifically upgraded for elite performance.",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "dce49",
+      text: "These skins come with enhanced visuals and combat stats, perfect for long-range domination. ",
+      type: "unordered-list-item",
+      depth: 1,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "cuogs",
+      text: "",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "o8sc",
+      text: "🔗 Linked Social Accounts\nEffortlessly transfer this account to your own with both Facebook and Google accounts linked for security. Full ownership is transferred at the time of purchase.\n\n",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 24,
+          style: "BOLD",
+        },
+        {
+          offset: 82,
+          length: 8,
+          style: "BOLD",
+        },
+        {
+          offset: 95,
+          length: 6,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "6ksip",
+      text: "🛡️ Why This Account Stands Out:",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 31,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "2f86v",
+      text: "Exclusive Skins: Rare skins that are no longer available in the in-game shop.",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 15,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "fkf5d",
+      text: "Mythic and Legendary Gear: Items that boost your stats and ensure you're the best on the battlefield.",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 25,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "a07aq",
+      text: "Highly Upgraded Account: With 55 levels of pure skill, this account is perfect for both casual and professional players.",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 23,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "b5rch",
+      text: "Premium Vehicles and Accessories: Custom-designed skins for vehicles and backpacks that aren’t available to the average player. ",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 32,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "1a552",
+      text: "",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "ecq4m",
+      text: "🕹️ Game Modes and Special Features:",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 35,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "7htq5",
+      text: "🏁 Conqueror Tier in Ranked:\nDominate the leaderboard with this high-level account.",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 16,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "e5fd9",
+      text: "🎖️ Custom Loadouts: Create your own ultimate strategy with a mix of mythics, weapon skins, and more.",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 18,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "jevv",
+      text: "🎯 Perfect for Snipers: This account has been specially curated for long-range warriors who love taking down opponents with precision. ",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 21,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "77o53",
+      text: "",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "3lg32",
+      text: "🌟 Why Buy This Account?",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 23,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "9qnfl",
+      text: "Unique Items: This account is packed with rare, one-of-a-kind items that are no longer available in PUBG.",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 12,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "9vdp7",
+      text: "Customizable: A wide range of skins for all your favorite weapons, vehicles, and outfits.",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 12,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "9hsil",
+      text: "Competitive Edge: Reach the top of the leaderboard with upgraded weapons and mythic skins. \n",
+      type: "unordered-list-item",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 0,
+          length: 16,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+    {
+      key: "v94q",
+      text: "🏆 This is your chance to own one of the best PUBG sniper accounts available! 🏆 ",
+      type: "unstyled",
+      depth: 0,
+      inlineStyleRanges: [
+        {
+          offset: 2,
+          length: 74,
+          style: "BOLD",
+        },
+      ],
+      entityRanges: [],
+      data: {},
+    },
+  ],
+  entityMap: {},
+};

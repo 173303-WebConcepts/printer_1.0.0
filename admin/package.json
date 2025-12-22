@@ -1,0 +1,53 @@
+{
+  "name": "admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "check-format": "prettier --check ."
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "axios": "^1.10.0",
+    "draft-js": "^0.11.7",
+    "formik": "^2.4.6",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "next": "15.3.4",
+    "nextjs-toploader": "^3.8.16",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-dropzone": "^14.3.8",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "react-select": "^5.10.1",
+    "react-toastify": "^11.0.5",
+    "redux-persist": "^6.0.0",
+    "theme-change": "^2.5.0",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/draft-js": "^0.11.18",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-draft-wysiwyg": "^1.13.8",
+    "@types/react-redux": "^7.1.34",
+    "daisyui": "^5.0.43",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.4",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.13",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
