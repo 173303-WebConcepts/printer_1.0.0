@@ -11,7 +11,6 @@ import ImageUploader from "@/src/components/ImageUploader";
 import { ValidationSchema } from "@/src/utils/formik/ValidationSchema";
 import { Helper } from "@/src/utils/Helper";
 import { useDispatch, useSelector } from "react-redux";
-import { KeyboardAwareScrollView } from "@codler/react-native-keyboard-aware-scroll-view";
 import { useRealm } from "@realm/react";
 import AppToast from "@/src/widgets/CustomToast";
 import { useNavigation, useRoute } from "@react-navigation/native";

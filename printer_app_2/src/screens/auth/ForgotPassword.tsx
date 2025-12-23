@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { ThemedText } from "../../widgets/ThemeText";
 import CustomTextInput from "../../widgets/CustomTextInput";
 import { PrimaryButton } from "../../widgets/Button";
-import Fontisto from "@react-native-vector-icons/fontisto";
 import Ionicons from "@react-native-vector-icons/ionicons";
 import AppIcon from "../../components/AppIcon";
 import LinearGradient from "react-native-linear-gradient";

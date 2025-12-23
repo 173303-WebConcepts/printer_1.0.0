@@ -3,8 +3,6 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { ThemedText } from "../../widgets/ThemeText";
 import CustomTextInput from "../../widgets/CustomTextInput";
 import { PrimaryButton } from "../../widgets/Button";
-import Fontisto from "@react-native-vector-icons/fontisto";
-import Feather from "@react-native-vector-icons/feather";
 import AppIcon from "../../components/AppIcon";
 import Svg, { Defs, Path, RadialGradient, Rect, Stop } from "react-native-svg";
 import LinearGradient from "react-native-linear-gradient";
@@ -47,13 +45,11 @@ export default function RegisterScreen() {
         }}
       />
 
-      <View className="px-4">
-        {/* Title */}
+      {/* <View className="px-4">
         <ThemedText className="text-3xl font-grotes-bold mb-1 text-center">Create your account</ThemedText>
         <ThemedText className="mb-6 text-center text-base-content-2">Join us today! Enter your details below to get started</ThemedText>
 
         <View className="mb-4">
-          {/* Email Input */}
           <CustomTextInput
             placeholder="Enter your shop Name"
             icon="shop"
@@ -64,7 +60,6 @@ export default function RegisterScreen() {
           />
         </View>
         <View className="mb-4">
-          {/* Email Input */}
           <CustomTextInput
             placeholder="Enter your email"
             icon="email"
@@ -77,7 +72,6 @@ export default function RegisterScreen() {
         </View>
 
         <View className="mb-4">
-          {/* Email Input */}
           <CustomTextInput
             placeholder="Enter your phone number"
             icon="phone"
@@ -89,7 +83,6 @@ export default function RegisterScreen() {
           />
         </View>
 
-        {/* Password Input */}
         <View className="mb-4">
           <CustomTextInput
             placeholder="Enter your password"
@@ -112,7 +105,6 @@ export default function RegisterScreen() {
           secureTextEntry
         />
 
-        {/* Login Button */}
         <PrimaryButton
           title="Signup"
           // disabled={!isFormValid}
@@ -120,20 +112,17 @@ export default function RegisterScreen() {
           className="mb-6 mt-10"
         />
 
-        {/* Or continue with */}
         <View className="flex-row items-center mt-5 mb-10">
           <View className="flex-1 h-[1px] bg-base-content/10" />
           <ThemedText className="mx-3 text-sm text-base-content-2">Or Continue With</ThemedText>
           <View className="flex-1 h-[1px] bg-base-content/10" />
         </View>
 
-        {/* Social Buttons */}
         <View className="flex-row justify-center  gap-5 space-x-4 mb-6">
           <TouchableOpacity
             onPress={handleGoogleLogin}
             className="flex-row items-center justify-center border border-base-content-20 bg-base-200 rounded-lg px-6 py-3 flex-1"
           >
-            {/* Google Logo SVG */}
             <Svg width={20} height={20} viewBox="0 0 533.5 544.3" className="mr-2">
               <Path
                 d="M533.5 278.4c0-17.6-1.6-35.2-4.8-52.1H272v98.7h147.1c-6.3 33.9-25.5 62.8-54.4 82v68h87.8c51.3-47.3 81-116.9 81-196.6z"
@@ -172,14 +161,13 @@ export default function RegisterScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Signup Text */}
         <View className="flex-row justify-center mt-4">
           <ThemedText className="text-base-content-70 mr-1">Already have an account?</ThemedText>
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <ThemedText className="text-primary font-grotes-bold underline">Login</ThemedText>
           </TouchableOpacity>
         </View>
-      </View>
+      </View> */}
     </View>
   );
 }

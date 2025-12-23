@@ -3,7 +3,6 @@ import { TouchableOpacity, View } from "react-native";
 import DashboardSidebar from "../components/Nav/DashboardSidebar";
 import AppIcon from "../components/AppIcon";
 import BottomNavbar from "../components/Nav/BottomNavbar";
-import BottomTabs from "../components/Nav/BottomNav";
 // import ConnectPrinter from "../components/Nav/ConnectPrinter";
 
 // const MemoConnectPrinter = React.memo(ConnectPrinter);
@@ -26,7 +25,6 @@ export default function TopBottomNav({ children }: { children: React.ReactNode }
 
       {/* Bottom Navigation */}
       <BottomNavbar />
-      {/* <BottomTabs /> */}
     </View>
   );
 }
