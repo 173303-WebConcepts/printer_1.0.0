@@ -40,12 +40,14 @@ const LoginModal = ({ showModal, setShowModal, phoneNumber }: any) => {
       // Example request — replace with your API
       const res = await axiosInstance.post("/auth/login", { phone: phoneNumber, password: enteredPin });
 
+      console.log("res::", res)
+
       if (res.data?.success) {
         setShowModal(false);
         Helper.res(res);
         dispatch(setUser({ user: res?.data?.data?.user, loginTime: Date.now() }));
         if (res?.data?.data?.user?.email) {
-          navigation.navigate("Main");
+          navigation.navigate("Dashboard");
         } else {
           navigation.navigate("BackupSettings");
         }

@@ -124,7 +124,7 @@ const AuthService = {
       Helper.setCookie(accessToken, res);
     }
 
-    const userDoc = await User.findById(existingUser._id).select("tokenVersion");
+    const userDoc = await User.findById(existingUser._id).select("+tokenVersion");
 
     if (!userDoc) {
       throw new ApiError(400, "Failed to login");
@@ -133,16 +133,12 @@ const AuthService = {
     // increment tokenVersion
     userDoc.tokenVersion += 1;
     await userDoc.save();
-
-    // convert to plain object
-    const userObj = userDoc.toObject();
-
-    // remove tokenVersion
-    delete userObj.tokenVersion;
+    
+    const { tokenVersion, GRefreshToken, ...otherFields  } = userDoc.toObject();
 
     if (userDoc) {
       return new ApiResponse(200, {
-        user: userDoc,
+        user: otherFields,
         ...(isMobile && { token: accessToken, expiresIn: 864000 }), // only include token for mobile apps, expiresIn 10days
       });
     } else {

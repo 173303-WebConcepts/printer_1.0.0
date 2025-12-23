@@ -53,6 +53,7 @@ export default function DashboardScreen() {
     let res = { access_token: GAuth?.accessToken };
 
     if (expired) {
+      console.log("KK::11", expired)
       res = await Backup.refreshAccessToken(user?.GRefreshToken); // you must implement this
 
       if (res?.access_token) {
@@ -64,6 +65,8 @@ export default function DashboardScreen() {
         return;
       }
     }
+
+    console.log("KK::22")
 
     const gdrive = Backup.initGDrive(res?.access_token);
 
@@ -111,6 +114,7 @@ export default function DashboardScreen() {
       let res = { access_token: GAuth?.accessToken };
 
       if (expired) {
+        console.log("KK::11", expired)
         const resBack = await axiosInstance.get("/auth/g-refresh-access-token");
 
         if (resBack?.data?.data?.access_token) {
@@ -124,6 +128,8 @@ export default function DashboardScreen() {
           return;
         }
       }
+
+       console.log("KK::22", expired)
 
       const gdrive = Backup.initGDrive(res?.access_token);
 
@@ -193,8 +199,8 @@ export default function DashboardScreen() {
         </View>
 
         {/* <PrimaryButton title="Count increase" className="mt-5" onPress={Backup.increaseWriteCounter} /> */}
-        <PrimaryButton title="Backup file / delete file" className="mt-5" onPress={handleBackup} />
-        <PrimaryButton title="Restore latest backup" className="mt-5" onPress={retoreBackup} />
+        {/* <PrimaryButton title="Backup file / delete file" className="mt-5" onPress={handleBackup} />
+        <PrimaryButton title="Restore latest backup" className="mt-5" onPress={retoreBackup} /> */}
       </ScrollView>
     </TopBottomNav>
   );

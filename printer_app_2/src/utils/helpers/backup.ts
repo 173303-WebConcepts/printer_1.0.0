@@ -357,6 +357,8 @@ export class Backup {
       fields: "files(id,name,mimeType,size)", // 🔹 request the size field
     });
 
+    console.log("KK::55", files);
+
     if (!files || !files.files || files.files.length === 0) {
       return null;
     }
@@ -367,8 +369,11 @@ export class Backup {
 
   static restoreLatestBackup = async (gdrive: GDrive, folderId: string, setShowDrawer?: any) => {
     try {
+      console.log("KK::33", folderId);
       const latest = await Backup.getLatestBackup(gdrive, folderId);
       const fileSize = latest?.size ? parseInt(latest.size, 10) : 0; // in bytes
+
+      console.log("KK::44", latest);
 
       if (!latest) {
         AppToast.error("Oops!", "No backup found to restore");
